@@ -105,7 +105,7 @@ def eval_model(args):
     # ans_file = open(answers_file, "a")
 
     
-    with open(".../OPERA/log/chair_eval_results/llava-1.5/ours.jsonl", "r", encoding="utf-8") as f:
+    with open("../opera_log/llava-1.5/ours.jsonl", "r", encoding="utf-8") as f:
         for _, data_line in tqdm(enumerate(f.readlines()),total=500):
             line = json.loads(data_line)
             idx = line["image_id"]
