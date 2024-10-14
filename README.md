@@ -115,10 +115,11 @@ python mme_llava.py
 - OPERA: https://github.com/shikiw/OPERA
 - VCD: https://github.com/DAMO-NLP-SG/VCD
 - LLaVA: https://github.com/haotian-liu/LLaVA
+- MiniGPT4: https://github.com/Vision-CAIR/MiniGPT-4
 
+## Acknowledgement
+The repository references the code from [DoLA](https://github.com/voidism/DoLa) and [OPERA](https://github.com/shikiw/OPERA) and utilizes MLLM codebase of [LLaVA](https://github.com/haotian-liu/LLaVA) and [MiniGPT4](https://github.com/Vision-CAIR/MiniGPT-4). We extend our gratitude to the authors for their outstanding work.
 
-<!-- ## Acknowledgement
-This repo is based on the MLLM codebase of [LAVIS](https://github.com/salesforce/LAVIS) and [MiniGPT-4](https://github.com/Vision-CAIR/MiniGPT-4) and the CHAIR code of [Maxlinn](https://github.com/Maxlinn/CHAIR-metric-standalone). Thanks for their impressive works! -->
 
 ## Citation
 If you find this work useful for your research, please cite [our paper](https://openreview.net/pdf?id=4z3IguA4Zg):
