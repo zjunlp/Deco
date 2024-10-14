@@ -1,13 +1,13 @@
 # MLLM Can See? Dynamic Correction Decoding For Hallucination Mitigation
 
 <!-- [![License: MIT](https://img.shields.io/badge/License-MIT-g.svg)](https://opensource.org/licenses/MIT)
-[![Arxiv](https://img.shields.io/badge/arXiv-2311.17911-B21A1B)](https://arxiv.org/pdf/2311.17911.pdf)
+[![Arxiv](https://img.shields.io/badge/arXiv-2311.17911-B21A1B)](https://openreview.net/pdf?id=4z3IguA4Zg)
 [![Hugging Face Transformers](https://img.shields.io/badge/%F0%9F%A4%97-Transformers-blue)](https://github.com/huggingface/transformers)
 [![GitHub Stars](https://img.shields.io/github/stars/shikiw/OPERA?style=social)](https://github.com/shikiw/OPERA/stargazers) -->
 
 
 This repository provides the official PyTorch implementation of the following paper: 
-> [**MLLM Can See? Dynamic Correction Decoding For Hallucination Mitigation**](https://arxiv.org/pdf/2311.17911.pdf) <br>
+> [**MLLM Can See? Dynamic Correction Decoding For Hallucination Mitigation**](https://openreview.net/pdf?id=4z3IguA4Zg) <br>
 > Chenxi Wang<sup>1</sup>, 
 > Xiang Chen<sup>1</sup>, 
 > Ningyu Zhang<sup>1</sup>,
@@ -121,7 +121,7 @@ python mme_llava.py
 This repo is based on the MLLM codebase of [LAVIS](https://github.com/salesforce/LAVIS) and [MiniGPT-4](https://github.com/Vision-CAIR/MiniGPT-4) and the CHAIR code of [Maxlinn](https://github.com/Maxlinn/CHAIR-metric-standalone). Thanks for their impressive works! -->
 
 ## Citation
-If you find this work useful for your research, please cite [our paper](https://arxiv.org/pdf/2311.17911.pdf):
+If you find this work useful for your research, please cite [our paper](https://openreview.net/pdf?id=4z3IguA4Zg):
 ```
 @inproceedings{huang2024opera,
   title={MLLM Can See? Dynamic Correction Decoding For Hallucination Mitigation},

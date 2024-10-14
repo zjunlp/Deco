@@ -143,7 +143,6 @@ def eval_model(args):
                         return_dict_in_generate=True,
                         output_hidden_states=True,
                         stopping_criteria=[stopping_criteria],
-                        # repetition_penalty=1.5,
                         use_deco = True,
                         alpha = 0.6,
                         threshold_top_p = 0.9, 
