@@ -109,7 +109,6 @@ python mme_llava.py
 
 
 
-
 ## Reference Repositories
 - DoLa: https://github.com/voidism/DoLa
 - OPERA: https://github.com/shikiw/OPERA

@@ -83,28 +83,14 @@ def eval_model(args):
         logger.info(f"Experiment directory created at {experiment_dir}")
     else:
         logger = create_logger(None)
-    # logger.info(f"use_cd: {args.use_cd}, method: {args.use_avisc}, layer_gamma: {args.layer_gamma}, masking_scheme: {args.masking_scheme}, lamb: {args.lamb}")
-    logger.info(f"question_file : {args.question_file}")
-
-
-    
     
     # Model
     disable_torch_init()
     model_path = os.path.expanduser(args.model_path)
     model_name = get_model_name_from_path(model_path)
     tokenizer, model, image_processor, context_len = load_pretrained_model(model_path, args.model_base, model_name,device="cuda:5")
-
-    # questions = [json.loads(q) for q in open(os.path.expanduser(args.question_file), "r")]
-    # questions = get_chunk(questions, args.num_chunks, args.chunk_idx)
-    with open(args.question_file, "r", encoding="utf-8") as f:
-        query_list_data = json.load(f) 
-    
-    # answers_file = os.path.expanduser(args.answers_file)
-    # # os.makedirs(os.path.dirname(answers_file), exist_ok=True)
-    # ans_file = open(answers_file, "a")
-
-    
+    answers_file = os.path.expanduser(args.answers_file)
+    os.makedirs(os.path.dirname(answers_file), exist_ok=True)    
     with open("../opera_log/llava-1.5/ours.jsonl", "r", encoding="utf-8") as f:
         for _, data_line in tqdm(enumerate(f.readlines()),total=500):
             line = json.loads(data_line)
@@ -124,7 +110,7 @@ def eval_model(args):
             prompt = conv.get_prompt()
 
             input_ids = tokenizer_image_token(prompt, tokenizer, IMAGE_TOKEN_INDEX, return_tensors='pt').unsqueeze(0).cuda(5)
-            image = Image.open(os.path.join(args.image_folder, image_file))
+            image = Image.open(image_file)
             image_tensor = image_processor.preprocess(image, return_tensors='pt')['pixel_values'][0]            
             stop_str = conv.sep if conv.sep_style != SeparatorStyle.TWO else conv.sep2
             keywords = [stop_str]
@@ -144,10 +130,10 @@ def eval_model(args):
                         output_hidden_states=True,
                         stopping_criteria=[stopping_criteria],
                         use_deco = True,
-                        alpha = 0.6,
-                        threshold_top_p = 0.9, 
-                        threshold_top_k = 20,
-                        early_exit_layers=[i for i in range(20, 29)],
+                        alpha = args.alpha,
+                        threshold_top_p=args.threshold_top_p, 
+                        threshold_top_k=args.threshold_top_k,
+                        early_exit_layers=[i for i in range(args.start_layer, args.end_layer)],
                         return_dict=True
                         )
                 
@@ -171,8 +157,6 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--model-path", type=str, default=".../llava-v1.5-7b")
     parser.add_argument("--model-base", type=str, default=None)
-    parser.add_argument("--image-folder", type=str, default=".../MME_Benchmark_release_version")
-    parser.add_argument("--question-file", type=str, default=".../AMBER/data/query/query_generative.json")
     parser.add_argument("--answers-file", type=str, default="")
     parser.add_argument("--conv-mode", type=str, default="llava_v1")
     parser.add_argument("--num-chunks", type=int, default=1)
@@ -184,9 +168,11 @@ if __name__ == "__main__":
     parser.add_argument("--max_new_tokens", type=int, default=512)
     parser.add_argument("--log_path", type=str, default="...")
     parser.add_argument("--batch_size", type=int, default=1)
-    parser.add_argument("--noise_step", type=int, default=500)
-    parser.add_argument("--cd_alpha", type=float, default=1)
-    parser.add_argument("--cd_beta", type=float, default=0.1)
+    parser.add_argument("--alpha", type=float, default=0.6)
+    parser.add_argument("--threshold_top_p", type=float, default=0.9)
+    parser.add_argument("--threshold_top_k", type=int, default=20)
+    parser.add_argument("--start_layer", type=int, default=20)
+    parser.add_argument("--end_layer", type=int, default=29)
     parser.add_argument("--seed", type=int, default=42)
 
     args = parser.parse_args()

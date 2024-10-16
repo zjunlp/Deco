@@ -137,15 +137,13 @@ def eval_model(args):
                 top_k=args.top_k,
                 max_new_tokens=1024,
                 use_deco=True,
-                alpha = 0.2,
-                min_num_candidate_tokens=None,
-                threshold_top_p = 0.9,
-                threshold_top_k = 10,
-                min_candidate_tokens = None,
+                alpha = args.alpha,
+                threshold_top_p=args.threshold_top_p, 
+                threshold_top_k=args.threshold_top_k,
+                early_exit_layers=[i for i in range(args.start_layer, args.end_layer)],
                 output_hidden_states=True,
                 return_dict_in_generate=True,
                 stopping_criteria=[stopping_criteria],
-                early_exit_layers=[i for i in range(15, 29, 1)]# 15-28
             )
         output_ids = output_dict.sequences
         input_token_len = input_ids.shape[1]
@@ -157,9 +155,6 @@ def eval_model(args):
         if outputs.endswith(stop_str):
             outputs = outputs[:-len(stop_str)]
         outputs = outputs.strip()
-
-        
-        
         logger.info(f"[{image_file}]")
         logger.info(f"prompt: {cur_prompt}") 
         logger.info(f"text: {outputs}")  
@@ -195,6 +190,12 @@ if __name__ == "__main__":
     parser.add_argument("--cd_alpha", type=float, default=1)
     parser.add_argument("--cd_beta", type=float, default=0.1)
     parser.add_argument("--seed", type=int, default=42)
+    
+    parser.add_argument("--alpha", type=float, default=0.6)
+    parser.add_argument("--threshold_top_p", type=float, default=0.9)
+    parser.add_argument("--threshold_top_k", type=int, default=20)
+    parser.add_argument("--start_layer", type=int, default=20)
+    parser.add_argument("--end_layer", type=int, default=29)
 
     args = parser.parse_args()
     set_seed(args.seed)
