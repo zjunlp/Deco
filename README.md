@@ -1,13 +1,13 @@
 # MLLM Can See? Dynamic Correction Decoding For Hallucination Mitigation
 
 <!-- [![License: MIT](https://img.shields.io/badge/License-MIT-g.svg)](https://opensource.org/licenses/MIT)
-[![Arxiv](https://img.shields.io/badge/arXiv-2311.17911-B21A1B)](https://openreview.net/pdf?id=4z3IguA4Zg)
+[![Arxiv](https://img.shields.io/badge/arXiv-2311.17911-B21A1B)](https://arxiv.org/abs/2410.11779)
 [![Hugging Face Transformers](https://img.shields.io/badge/%F0%9F%A4%97-Transformers-blue)](https://github.com/huggingface/transformers)
 [![GitHub Stars](https://img.shields.io/github/stars/shikiw/OPERA?style=social)](https://github.com/shikiw/OPERA/stargazers) -->
 
 
 This repository provides the official PyTorch implementation of the following paper: 
-> [**MLLM Can See? Dynamic Correction Decoding For Hallucination Mitigation**](https://openreview.net/pdf?id=4z3IguA4Zg) <br>
+> [**MLLM Can See? Dynamic Correction Decoding For Hallucination Mitigation**](https://arxiv.org/abs/2410.11779) <br>
 > Chenxi Wang<sup>1</sup>, 
 > Xiang Chen<sup>1</sup>, 
 > Ningyu Zhang<sup>1</sup>,
@@ -121,7 +121,7 @@ The repository references the code from [DoLA](https://github.com/voidism/DoLa) 
 
 
 ## Citation
-If you find this work useful for your research, please cite [our paper](https://openreview.net/pdf?id=4z3IguA4Zg):
+If you find this work useful for your research, please cite [our paper](https://arxiv.org/abs/2410.11779):
 ```
 @misc{wang2024mllmseedynamiccorrection,
       title={MLLM can see? Dynamic Correction Decoding for Hallucination Mitigation}, 
