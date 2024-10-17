@@ -123,11 +123,13 @@ The repository references the code from [DoLA](https://github.com/voidism/DoLa) 
 ## Citation
 If you find this work useful for your research, please cite [our paper](https://openreview.net/pdf?id=4z3IguA4Zg):
 ```
-@inproceedings{huang2024opera,
-  title={MLLM Can See? Dynamic Correction Decoding For Hallucination Mitigation},
-  author={Chenxi Wang, Xiang Chen, Ningyu Zhang, Bozhong Tian, Haoming Xu, Shumin Deng, Huajun Chen},
-  booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},
-  pages={13418--13427},
-  year={2024}
+@misc{wang2024mllmseedynamiccorrection,
+      title={MLLM can see? Dynamic Correction Decoding for Hallucination Mitigation}, 
+      author={Chenxi Wang and Xiang Chen and Ningyu Zhang and Bozhong Tian and Haoming Xu and Shumin Deng and Huajun Chen},
+      year={2024},
+      eprint={2410.11779},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL},
+      url={https://arxiv.org/abs/2410.11779}, 
 }
 ```
