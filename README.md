@@ -71,7 +71,6 @@ The following evaluation requires for MSCOCO 2014 dataset. Please download [here
 
 | Argument             | Example             | Description   |
 | -------------------- | ------------------- | ------------- |
-| `--model`    | `llava-1.5` | Specify the MLLM model, this codebase supports `instructblip`, `minigpt4`, `llava-1.5`, `shikra`. |
 | `--data-path`     | `/path/to/dataset` | Path to the dataset file or folder, e.g., `COCO_2014/val2014/`. |
 | `--alpha`   | `0.5` | The scale factor to scale up the calibration strength. |
 | `--threshold_top_p`      | `0.9` | The threshold for controlling the number of candidate tokens. |
