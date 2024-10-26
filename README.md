@@ -111,8 +111,25 @@ python pope_eval.py
 ```bash
 python mme_llava.py
 ```
+### Additional Experiment's Results
+We compare the baseline, DoLa, DeCo, and the combination of DoLa and DeCo on the LLM benchmark, such as StrategyQA and GSM8K, using llama-7b.
+
+| Method            | StrategyQA             | GSM8K   |
+| -------------------- | ------------------- | ------------- |
+| baseline    | 59.8 | 10.8 |
+| DoLa   | 64.1 | 10.5 |
+| DeCo      | 61.2 | 10.2 |
+| DoLa+DeCo   | 60.0 | 9.6 |
 
 
+We compare the baseline, DoLa, DeCo, and the combination of DoLa and DeCo on CHAIR, using llava-v1.5-7b.
+
+| Method            | CHAIRs             | CHAIRi   |
+| -------------------- | ------------------- | ------------- |
+| baseline    | 45.0 | 14.7 |
+| DoLa   | 47.8 | 13.8 |
+| DeCo      | 37.8 | 11.1 |
+| DoLa+DeCo   | 44.2 | 11.9 |
 
 ## Reference Repositories
 - DoLa: https://github.com/voidism/DoLa
