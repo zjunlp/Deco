@@ -5,6 +5,13 @@
 [![Hugging Face Transformers](https://img.shields.io/badge/%F0%9F%A4%97-Transformers-blue)](https://github.com/huggingface/transformers)
 [![GitHub Stars](https://img.shields.io/github/stars/shikiw/OPERA?style=social)](https://github.com/shikiw/OPERA/stargazers) -->
 
+<p align="center">
+  <a href="https://www.arxiv.org/abs/2410.11779">📄arXiv</a> •
+  <a href="https://huggingface.co/papers/2410.07869">🤗HFPaper</a> •
+  <a href="https://notebooklm.google.com/notebook/e41ab929-0cf5-45d2-a5b7-c3c109e2baac/audio">🎧NotebookLM Audio</a>
+</p>
+
+
 
 This repository provides the official PyTorch implementation of the following paper: 
 > [**MLLM Can See? Dynamic Correction Decoding For Hallucination Mitigation**](https://arxiv.org/abs/2410.11779) <br>
