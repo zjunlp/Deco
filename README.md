@@ -7,7 +7,7 @@
 
 <p align="center">
   <a href="https://www.arxiv.org/abs/2410.11779">📄arXiv</a> •
-  <a href="https://huggingface.co/papers/2410.07869">🤗HFPaper</a> •
+  <a href="https://huggingface.co/papers/2410.11779">🤗HFPaper</a> •
   <a href="https://notebooklm.google.com/notebook/e41ab929-0cf5-45d2-a5b7-c3c109e2baac/audio">🎧NotebookLM Audio</a>
 </p>
 
