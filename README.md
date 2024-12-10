@@ -31,6 +31,8 @@ This repository provides the official PyTorch implementation of the following pa
 
 Multimodal Large Language Models (MLLMs) frequently exhibit hallucination phenomena, but the underlying reasons remain poorly understood. In this paper, we present an empirical analysis and find that, although MLLMs incorrectly generate the targets in the final output, they are actually able to recognize visual objects in the preceding layers. We speculate that this may be due to the strong knowledge priors of the language model suppressing the visual information, leading to hallucinations. Motivated by this, we propose a novel dynamic correction decoding method for MLLMs (DeCo), which adaptively selects the appropriate preceding layers and proportionally integrates knowledge into the final layer to adjust the output logits. Note that DeCo is model agnostic and can be seamlessly incorporated with various classic decoding strategies and applied to different MLLMs. We evaluate DeCo on widely-used benchmarks, demonstrating that it can reduce hallucination rates by a large margin compared to baselines, highlighting its potential to mitigate hallucinations.
 
+## Demo
+There is a demonstration of using DeCo. We provide a handy [Jupyter Notebook](https://github.com/zjunlp/Deco/blob/main/DeCo_examples.ipynb)!
 ## Setup
 
 The main implementation of Deco is in `transformers/generation/utils.py`.
